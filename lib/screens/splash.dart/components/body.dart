@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lootbox/constants.dart';
+import 'package:lootbox/screens/sign_in/sign_in_screen.dart';
 
 import 'splash_content.dart';
 
@@ -14,8 +15,14 @@ class _SplashBodyState extends State<SplashBody> {
   int currentPage = 0;
   List<Map<String, String>> splashData = [
     {"image": "assets/images/team.png", "text": "I Am Because We Are"},
-    {"image": "assets/images/collaboration.png", "text": "I Am Because We Are"},
-    {"image": "assets/images/audience.png", "text": "I Am Because We Are"}
+    {
+      "image": "assets/images/collaboration.png",
+      "text": "Friends Fueling Financial Freedom"
+    },
+    {
+      "image": "assets/images/people.png",
+      "text": "Bringing old habits to the new world"
+    }
   ];
   @override
   Widget build(BuildContext context) {
@@ -59,7 +66,9 @@ class _SplashBodyState extends State<SplashBody> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, SignInScreen.routeName);
+                  },
                   child: const Padding(
                     padding: EdgeInsets.only(left: 10.0, right: 10),
                     child: Text(
